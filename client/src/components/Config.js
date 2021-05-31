@@ -7,3 +7,8 @@ export const API_URL = "https://api.themoviedb.org/3/";
 
 // Images config from MovieDB
 export const IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
+
+//Sizes: w300, w780, w1280, original
+//Back
+export const IMAGE_SIZE = "w1280";
+// post
