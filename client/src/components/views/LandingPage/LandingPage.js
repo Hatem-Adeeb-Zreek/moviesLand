@@ -1,24 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { API_URL, API_KEY } from "../../Config";
 import { Typography, Row } from "antd";
+import { response } from "express";
 
 //ant-design
 const { Title } = Typography;
 
 function LandingPage(props) {
-    // const [state, setstate] = useState(initialState);
+    const [Movies, setMovies] = useState([]);
     useEffect(() => {
-        const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
-        fetchMovies(endpoint);
+        fetch(
+            `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`
+        )
+            .then((response) => response.json())
+            .then((response) => {
+                console.log(response);
+                setMovies(response.results);
+            });
     }, []);
+    // useEffect(() => {
+    //     const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+    //     fetchMovies(endpoint);
+    // }, []);
 
     // fetch movies function from MovieDB API
-    const fetchMovies = (endpoint) => {
-        fetch(endpoint)
-            .then((result) => result.json())
-            .then((result) => console.log(result))
-            .catch((error) => console.error("Error:", error));
-    };
+    // const fetchMovies = (endpoint) => {
+    //     fetch(endpoint)
+    //         .then((result) => result.json())
+    //         .then((result) => console.log(result))
+    //         .catch((error) => console.error("Error:", error));
+    // };
     return (
         <div className="landing-page-wrapper">
             {/* movie main image */}
