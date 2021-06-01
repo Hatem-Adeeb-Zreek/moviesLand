@@ -45,6 +45,11 @@ input.error {
     margin: 0;
 }
 
+.fetched-movies {
+    width: 85%;
+    margin: 1rem auto;
+}
+
 /* MainImage Styles */
 .main-image-wrapper {
     height: 500px;
@@ -68,4 +73,15 @@ input.error {
 .main-image-info p {
     color: white;
     font-size: 1rem;
+}
+
+/* GridCards Styles */
+
+.grid-container {
+    position: relative;
+}
+
+.grid-container img {
+    width: 100%;
+    height: 320px;
 }

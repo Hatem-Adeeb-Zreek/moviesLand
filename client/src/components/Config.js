@@ -11,4 +11,6 @@ export const IMAGE_BASE_URL = "http://image.tmdb.org/t/p/";
 //Sizes: w300, w780, w1280, original
 //Back
 export const IMAGE_SIZE = "w1280";
-// post
+
+// w92, w154, w185, w342, w500, w780, original
+export const POSTER_SIZE = "w500";
