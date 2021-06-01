@@ -50,6 +50,11 @@ input.error {
     margin: 1rem auto;
 }
 
+.load-more {
+    display: flex;
+    justify-content: center;
+}
+
 /* MainImage Styles */
 .main-image-wrapper {
     height: 500px;
