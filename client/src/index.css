@@ -55,6 +55,29 @@ input.error {
     justify-content: center;
 }
 
+#btn {
+    background: blue;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    color: #eee;
+    font-size: 25px;
+    font-family: "Cookie", cursive;
+    position: relative;
+    transition: 1s;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 5px;
+}
+
+#btn:hover {
+    background: tomato;
+}
+
 /* MainImage Styles */
 .main-image-wrapper {
     height: 500px;

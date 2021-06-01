@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Typography, Row, Button } from "antd";
+import { Typography, Row } from "antd";
 import {
     API_URL,
     API_KEY,
@@ -22,6 +22,11 @@ function LandingPage() {
     useEffect(() => {
         const endpoint = `${API_URL}movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
         fetchMovies(endpoint);
+        // eslint-disable-next-line
+    }, []);
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
     }, []);
 
     const fetchMovies = (endpoint) => {
@@ -46,6 +51,28 @@ function LandingPage() {
             CurrentPage + 1
         }`;
         fetchMovies(endpoint);
+    };
+
+    const handleScroll = () => {
+        const windowHeight =
+            "innerHeight" in window
+                ? window.innerHeight
+                : document.documentElement.offsetHeight;
+        const body = document.body;
+        const html = document.documentElement;
+        const docHeight = Math.max(
+            body.scrollHeight,
+            body.offsetHeight,
+            html.clientHeight,
+            html.scrollHeight,
+            html.offsetHeight
+        );
+        const windowBottom = windowHeight + window.pageYOffset;
+        if (windowBottom >= docHeight - 1) {
+            // loadMoreItems()
+            console.log("clicked");
+            buttonRef.current.click();
+        }
     };
 
     return (
@@ -80,14 +107,15 @@ function LandingPage() {
                 {Loading && <div>Loading...</div>}
 
                 <br />
-                <div className="load-more">
-                    <Button
-                        type="primary"
-                        ref={buttonRef}
-                        onClick={loadMoreItems}
-                    >
+                {/* <div className="load-more">
+                    <button ref={buttonRef} onClick={loadMoreItems}>
                         Load More
-                    </Button>
+                    </button>
+                </div> */}
+                <div className="load-more">
+                    <div id="btn" ref={buttonRef} onClick={loadMoreItems}>
+                        <span>Load More</span>
+                    </div>
                 </div>
             </div>
         </div>
