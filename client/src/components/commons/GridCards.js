@@ -22,9 +22,9 @@ function GridCards(props) {
         return (
             <Col key={key} lg={6} md={8} xs={24}>
                 <div className="grid-container">
-                    <a href={`/movie/${movieId}`}>
+                    <Link to={`/movie/${movieId}`}>
                         <img alt={movieName} src={image} />
-                    </a>
+                    </Link>
                 </div>
             </Col>
         );
