@@ -4,9 +4,11 @@ import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE } from "../../Config";
 import GridCards from "../../commons/GridCards";
 import MainImage from "../../views/LandingPage/Sections/MainImage";
 import MovieInfo from "./Sections/MovieInfo";
+import Favorite from "./Sections/Favorite";
 
 function MovieDetailPage(props) {
     const movieId = props.match.params.movieId;
+    console.log("movieId:", movieId);
     const [Movie, setMovie] = useState([]);
     const [Casts, setCasts] = useState([]);
     const [LoadingForMovie, setLoadingForMovie] = useState(true);
@@ -59,6 +61,14 @@ function MovieDetailPage(props) {
 
             {/* Body */}
             <div className="movie-detail">
+                {/* Favorite */}
+                <div className="favorite-wrapper">
+                    <Favorite
+                        movieInfo={Movie}
+                        movieId={movieId}
+                        userFrom={localStorage.getItem("userId")}
+                    />
+                </div>
                 {/* Movie Info */}
                 {!LoadingForMovie ? (
                     <MovieInfo movie={Movie} />
