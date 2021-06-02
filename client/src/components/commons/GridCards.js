@@ -1,6 +1,7 @@
 import React from "react";
 import { Col } from "antd";
 import { IMAGE_BASE_URL } from "../Config";
+import { Link } from "react-router-dom";
 
 function GridCards(props) {
     let { actor, key, image, movieId, movieName, characterName } = props;
