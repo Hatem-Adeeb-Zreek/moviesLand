@@ -27,6 +27,9 @@ function LandingPage() {
 
     useEffect(() => {
         window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
     const fetchMovies = (endpoint) => {
