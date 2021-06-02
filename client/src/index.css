@@ -113,3 +113,16 @@ input.error {
     width: 100%;
     height: 320px;
 }
+
+/* MovieDetail Styles */
+
+.movie-detail {
+    width: 85%;
+    margin: 1rem auto;
+}
+
+.actor-grid {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
