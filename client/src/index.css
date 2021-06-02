@@ -126,3 +126,8 @@ input.error {
     justify-content: center;
     margin: 2rem;
 }
+
+.favorite-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
