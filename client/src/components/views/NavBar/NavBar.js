@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import LeftMenu from "./Sections/LeftMenu";
 import RightMenu from "./Sections/RightMenu";
 import { Drawer, Button, Icon } from "antd";
+import { Link } from "react-router-dom";
 const Logo = require("../../../assets/images/Logo.png");
 
 function NavBar() {
@@ -21,13 +22,13 @@ function NavBar() {
             style={{ position: "fixed", zIndex: 1, width: "100%" }}
         >
             <div className="menu__logo">
-                <a href="/">
+                <Link to="/">
                     <img
                         src={Logo}
                         alt="Logo"
                         style={{ width: "100%", marginTop: "-9px" }}
                     />
-                </a>
+                </Link>
             </div>
             <div className="menu__container">
                 <div className="menu_left">

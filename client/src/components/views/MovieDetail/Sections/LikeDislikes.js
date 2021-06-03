@@ -27,6 +27,7 @@ function LikeDislikes(props) {
                 setLikes(response.data.likes.length);
 
                 //if I already click this like button or not
+                // eslint-disable-next-line
                 response.data.likes.map((like) => {
                     if (like.userId === props.userId) {
                         setLikeAction("liked");
@@ -44,6 +45,7 @@ function LikeDislikes(props) {
                 setDislikes(response.data.dislikes.length);
 
                 //if I already click this like button or not
+                // eslint-disable-next-line
                 response.data.dislikes.map((dislike) => {
                     if (dislike.userId === props.userId) {
                         setDislikeAction("disliked");
@@ -53,6 +55,7 @@ function LikeDislikes(props) {
                 alert("Failed to get dislikes");
             }
         });
+        // eslint-disable-next-line
     }, []);
 
     const onLike = () => {

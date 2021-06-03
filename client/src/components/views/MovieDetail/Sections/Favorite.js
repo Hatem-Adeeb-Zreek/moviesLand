@@ -81,7 +81,7 @@ function Favorite(props) {
             <Button type="primary" onClick={onClickFavorite}>
                 {" "}
                 {!Favorited ? "Add to Favorite" : "Remove from Favorite"}
-                {/* {FavoriteNumber} */}
+                {FavoriteNumber}
             </Button>
         </>
     );
