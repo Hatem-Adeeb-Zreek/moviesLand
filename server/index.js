@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const cookieParser = require("cookie-parser");
 const config = require("./config/key");
+const path = require("path"); // heroku
 
 const mongoose = require("mongoose");
 const connect = mongoose
