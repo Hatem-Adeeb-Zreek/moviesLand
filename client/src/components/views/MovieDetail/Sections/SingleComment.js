@@ -67,8 +67,8 @@ function SingleComment(props) {
                         placeholder="write some comments"
                     />
                     <br />
-                    <Button type="default" onClick={onSubmit}>
-                        Submit
+                    <Button type="primary" onClick={onSubmit}>
+                        Replay
                     </Button>
                 </form>
             )}
