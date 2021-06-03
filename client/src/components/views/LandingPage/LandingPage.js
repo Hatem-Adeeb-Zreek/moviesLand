@@ -36,9 +36,6 @@ function LandingPage() {
         fetch(endpoint)
             .then((result) => result.json())
             .then((result) => {
-                // console.log(result)
-                // console.log('Movies',...Movies)
-                // console.log('result',...result.results)
                 setMovies([...Movies, ...result.results]);
                 setMainMovieImage(MainMovieImage || result.results[0]);
                 setCurrentPage(result.page);
@@ -72,7 +69,6 @@ function LandingPage() {
         );
         const windowBottom = windowHeight + window.pageYOffset;
         if (windowBottom >= docHeight - 1) {
-            // loadMoreItems()
             console.log("clicked");
             buttonRef.current.click();
         }
@@ -110,11 +106,6 @@ function LandingPage() {
                 {Loading && <div>Loading...</div>}
 
                 <br />
-                {/* <div className="load-more">
-                    <button ref={buttonRef} onClick={loadMoreItems}>
-                        Load More
-                    </button>
-                </div> */}
                 <div className="load-more">
                     <div id="btn" ref={buttonRef} onClick={loadMoreItems}>
                         <span>Load More</span>

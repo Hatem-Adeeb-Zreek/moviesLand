@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { loginUser } from "../../../_actions/user_actions";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -54,7 +54,6 @@ function LoginPage(props) {
                                 if (rememberMe === true) {
                                     window.localStorage.setItem(
                                         "rememberMe",
-                                        // First I got undefined then I change the values.id  to values.email
                                         values.email
                                     );
                                 } else {
@@ -84,12 +83,10 @@ function LoginPage(props) {
                     values,
                     touched,
                     errors,
-                    // dirty,
                     isSubmitting,
                     handleChange,
                     handleBlur,
                     handleSubmit,
-                    // handleReset,
                 } = props;
                 return (
                     <div className="app">
@@ -154,15 +151,7 @@ function LoginPage(props) {
 
                             {formErrorMessage && (
                                 <label>
-                                    <p
-                                        style={{
-                                            color: "#ff0000bf",
-                                            fontSize: "0.7rem",
-                                            border: "1px solid",
-                                            padding: "1rem",
-                                            borderRadius: "10px",
-                                        }}
-                                    >
+                                    <p className="form-error-msg">
                                         {formErrorMessage}
                                     </p>
                                 </label>
@@ -195,7 +184,7 @@ function LoginPage(props) {
                                         Log in
                                     </Button>
                                 </div>
-                                Or <a href="/register">register now!</a>
+                                Or <Link to="/register">register now!</Link>
                             </Form.Item>
                         </form>
                     </div>
