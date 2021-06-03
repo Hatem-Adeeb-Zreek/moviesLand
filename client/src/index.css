@@ -132,6 +132,11 @@ input.error {
     justify-content: flex-end;
 }
 
+.like-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
 /* FavoritePage Styles */
 
 .favorite-wrapper {

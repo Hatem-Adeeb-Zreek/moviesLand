@@ -3,6 +3,7 @@ import { Row, Button } from "antd";
 import axios from "axios";
 
 import Comments from "./Sections/Comments";
+import LikeDislikes from "./Sections/LikeDislikes";
 import { API_URL, API_KEY, IMAGE_BASE_URL, IMAGE_SIZE } from "../../Config";
 import GridCards from "../../commons/GridCards";
 import MainImage from "../../views/LandingPage/Sections/MainImage";
@@ -128,6 +129,14 @@ function MovieDetailPage(props) {
                     </Row>
                 )}
                 <br />
+                <div className="like-wrapper">
+                    <LikeDislikes
+                        video
+                        videoId={movieId}
+                        userId={localStorage.getItem("userId")}
+                    />
+                </div>
+
                 {/* Comments */}
                 <Comments
                     movieTitle={Movie.original_title}
