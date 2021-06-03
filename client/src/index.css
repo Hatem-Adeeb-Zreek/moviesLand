@@ -131,3 +131,37 @@ input.error {
     display: flex;
     justify-content: flex-end;
 }
+
+/* FavoritePage Styles */
+
+.favorite-wrapper {
+    width: 85%;
+    margin: 3rem auto;
+}
+
+.favorite-box {
+    width: 100%;
+    font-size: 2rem;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}

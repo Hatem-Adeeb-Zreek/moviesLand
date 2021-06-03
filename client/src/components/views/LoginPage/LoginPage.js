@@ -5,7 +5,6 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Form, Icon, Input, Button, Checkbox, Typography } from "antd";
 import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
 
 const { Title } = Typography;
 
