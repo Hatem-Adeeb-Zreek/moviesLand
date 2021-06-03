@@ -25,7 +25,7 @@ function NavBar() {
                     <img
                         src={Logo}
                         alt="Logo"
-                        style={{ width: "100%", marginTop: "-5px" }}
+                        style={{ width: "100%", marginTop: "-9px" }}
                     />
                 </a>
             </div>
