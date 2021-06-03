@@ -17,6 +17,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/users", require("./routes/users"));
+app.use("/api/comment", require("./routes/comment"));
 app.use("/api/favorite", require("./routes/favorite"));
 
 app.use("/uploads", express.static("uploads"));
