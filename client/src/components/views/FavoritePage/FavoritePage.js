@@ -16,6 +16,7 @@ function FavoritePage() {
 
     useEffect(() => {
         fetchFavoredMovie();
+        // eslint-disable-next-line
     }, []);
 
     const fetchFavoredMovie = () => {
@@ -55,6 +56,7 @@ function FavoritePage() {
                 {favorite.moviePost ? (
                     <img
                         src={`${IMAGE_BASE_URL}${POSTER_SIZE}${favorite.moviePost}`}
+                        alt="favorite_movie_image"
                     />
                 ) : (
                     "no image"
@@ -70,13 +72,14 @@ function FavoritePage() {
 
                 <td>{favorite.movieRunTime} mins</td>
                 <td>
-                    <button
+                    <Button
+                        type="primary"
                         onClick={() =>
                             onClickDelete(favorite.movieId, favorite.userFrom)
                         }
                     >
                         Remove
-                    </button>
+                    </Button>
                 </td>
             </tr>
         );

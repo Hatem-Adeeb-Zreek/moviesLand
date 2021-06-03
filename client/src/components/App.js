@@ -8,6 +8,7 @@ import RegisterPage from "./views/RegisterPage/RegisterPage.js";
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
 import MovieDetail from "./views/MovieDetail/MovieDetail";
+import FavoritePage from "./views/FavoritePage/FavoritePage";
 
 function App() {
     return (
@@ -32,6 +33,11 @@ function App() {
                         exact
                         path="/movie/:movieId"
                         component={Auth(MovieDetail, null)}
+                    />
+                    <Route
+                        exact
+                        path="/favorite"
+                        component={Auth(FavoritePage, null)}
                     />
                 </Switch>
             </div>
